@@ -8,7 +8,7 @@ const PayDetail = () => {
   return (
     <>
       <Image width="100%" className="!h-[350px] md:!h-[250px]" src={king_pay} />
-      <div className="content w-[700px] pt-7 pl-8 pr-2 md:w-[350px]">
+      <div className="content w-[700px] pt-7 pl-8 pr-2 md:w-[350px] sm:pl-2">
         <Title level={3}>King room</Title>
         <Title level={5}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam

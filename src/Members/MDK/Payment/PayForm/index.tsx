@@ -53,7 +53,7 @@ const PayForm = () => {
           maxWidth: 600,
           marginTop: "2rem",
         }}
-        className="md:!w-[300px]"
+        className="md:!w-[300px] sm:!w-[390px] sm:!ml-16"
       >
         <Form.Item name="email" label="Email">
           <Input
