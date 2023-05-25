@@ -10,6 +10,7 @@ import {
 import type { DatePickerProps } from "antd";
 import { useState } from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import { useNavigate } from "react-router-dom";
 
 const { Title } = Typography;
 
@@ -25,6 +26,8 @@ const onChange: DatePickerProps["onChange"] = (date, dateString) => {
 
 const PayForm = () => {
   const [form] = Form.useForm();
+
+  const navigate = useNavigate();
 
   const onFinish = (values: any) => {
     console.log(values);
@@ -166,6 +169,9 @@ const PayForm = () => {
                     const details = await actions.order.capture();
                     const name = details.payer?.name?.given_name;
                     alert("Transaction completed by " + name);
+                    setTimeout(() => {
+                      navigate("/invoice");
+                    }, 1500);
                   }
                 }}
               />

@@ -29,7 +29,7 @@ const Invoice = () => {
             <Title level={4} className="!font-normal">
               payment Time
             </Title>
-            <Title level={3}>12-06-2023, 11:00</Title>
+            <Title level={3}>26-05-2023</Title>
           </Space>
           <Space className="flex items-center justify-between mb-2">
             <Title level={4} className="!font-normal">
@@ -41,7 +41,7 @@ const Invoice = () => {
             <Title level={4} className="!font-normal">
               sender
             </Title>
-            <Title level={3}>Nguyen Van A</Title>
+            <Title level={3}>John</Title>
           </Space>
         </div>
         <div className="invoice-total pt-4">
