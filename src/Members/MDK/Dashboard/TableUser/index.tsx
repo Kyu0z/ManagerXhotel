@@ -31,9 +31,7 @@ const TableUser = () => {
       dataIndex: "avatar",
       key: "avatar",
       fixed: "left",
-      render: (text: string, record: DataType) => (
-        <img src={user} alt="avatar" />
-      ),
+      render: () => <img src={user} alt="avatar" />,
     },
     {
       title: "Name",
@@ -47,13 +45,13 @@ const TableUser = () => {
     {
       title: "Check In",
       key: "checkIn",
-      render: (text: string, record: DataType) => <span>14:00 31/2/2023</span>,
+      render: () => <span>14:00 31/2/2023</span>,
     },
     {
       title: "Check Out",
       key: "checkOut",
       width: 100,
-      render: (text: string, record: DataType) => <span>12:00 03/3/2023</span>,
+      render: () => <span>12:00 03/3/2023</span>,
     },
     {
       title: "State",
