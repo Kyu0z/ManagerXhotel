@@ -1,7 +1,10 @@
 import { Typography, Layout, Button, Form, Input } from "antd";
 import { toast } from "react-toastify";
+import { db } from "@src/firebase";
+import { collection, addDoc } from "firebase/firestore";
 import facebook from "@src/components/icon/facebook.svg";
 import google from "@src/components/icon/google.svg";
+import { useNavigate } from "react-router-dom";
 
 const { Title } = Typography;
 
@@ -12,16 +15,28 @@ const layout = {
 
 const SignUp = () => {
   const [form] = Form.useForm();
+  const navigate = useNavigate();
 
-  const handleNotify = (values: any) => {
-    // Log dữ liệu vào console
-    console.log("Form data:", values);
+  const handleNotify = async (values: any) => {
+    const { username, code } = values;
+    const name = username;
+    const phoneNumber = code;
 
-    // Hiển thị toast thành công
-    toast.success("Đăng ký thành công!", {
-      position: toast.POSITION.TOP_RIGHT,
-      autoClose: 3000,
-    });
+    try {
+      const docRef = await addDoc(collection(db, "users"), {
+        name,
+        phoneNumber,
+      });
+      console.log("New document ID:", docRef.id);
+      // Xử lý khi tài liệu mới được thêm vào thành công
+      toast.success("Đăng ký thành công"); // Thông báo thành công
+      setTimeout(() => {
+        navigate("/payment");
+      }, 1500);
+    } catch (error) {
+      console.error("Lỗi khi thêm tài liệu:", error);
+      toast.error("Đăng ký thất bại"); // Thông báo thành công
+    }
   };
 
   return (
@@ -78,10 +93,10 @@ const SignUp = () => {
           </Form.Item>
           <Form.Item
             name="code"
-            label="Referral Code"
-            rules={[{ required: true, message: "Hãy nhập Referral Code.." }]}
+            label="Phone Numbers"
+            rules={[{ required: true, message: "Hãy nhập số điện thoại.." }]}
           >
-            <Input placeholder="Enter referral code" size="large" />
+            <Input placeholder="Enter phone numbers" size="large" />
           </Form.Item>
           <Form.Item>
             <Button

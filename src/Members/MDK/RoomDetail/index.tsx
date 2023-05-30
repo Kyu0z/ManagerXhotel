@@ -16,9 +16,9 @@ import customParseFormat from "dayjs/plugin/customParseFormat";
 import { AntDesignOutlined, UserOutlined } from "@ant-design/icons";
 import Stars from "@src/components/icon/Stars";
 import feature from "@src/components/icon/feature.svg";
-import king_room from "@src/assets/king_room.jpg";
+import double_room from "@src/assets/double_room.jpg";
+import { NavLink, useParams } from "react-router-dom";
 import arrowLeft from "@src/components/icon/arrowLeft.svg";
-import { NavLink } from "react-router-dom";
 
 const { Title } = Typography;
 
@@ -31,7 +31,9 @@ const disabledDate: RangePickerProps["disabledDate"] = (current) => {
   return current && current < dayjs().endOf("day");
 };
 
-const KingDetail = () => {
+const RoomDetail = () => {
+  const { typeroom } = useParams();
+
   const handleBack = () => {
     window.history.back();
   };
@@ -41,7 +43,7 @@ const KingDetail = () => {
         <Image
           width={700}
           height={800}
-          src={king_room}
+          src={double_room}
           className="md:!w-[350px] md:!h-full"
         />
       </Col>
@@ -49,7 +51,11 @@ const KingDetail = () => {
         <div style={{ padding: "3rem 1rem" }}>
           <Space className="flex item-center justify-between">
             <Title level={2} className="!font-bold">
-              King Room
+              {typeroom === "l02"
+                ? "Lanai Room"
+                : typeroom === "l01"
+                ? "Luxury Room"
+                : "Single Room"}
             </Title>
             <NavLink to="#" onClick={handleBack}>
               <img
@@ -102,7 +108,7 @@ const KingDetail = () => {
             <RangePicker disabledDate={disabledDate} />
           </div>
           <div className="flex items-center justify-center">
-            <NavLink to={"/payment"}>
+            <NavLink to={"/sign-up"}>
               <Button
                 style={{
                   background: "#F1E2D3",
@@ -125,4 +131,4 @@ const KingDetail = () => {
   );
 };
 
-export default KingDetail;
+export default RoomDetail;

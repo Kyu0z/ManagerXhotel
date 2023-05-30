@@ -11,6 +11,7 @@ import type { DatePickerProps } from "antd";
 import { useState } from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const { Title } = Typography;
 
@@ -42,6 +43,7 @@ const PayForm = () => {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+
   return (
     <>
       <Title level={3} className="!font-bold">
@@ -168,7 +170,7 @@ const PayForm = () => {
                   if (actions.order) {
                     const details = await actions.order.capture();
                     const name = details.payer?.name?.given_name;
-                    alert("Transaction completed by " + name);
+                    toast.success("Thanh toán thành công, Cảm ơn " + name); // Thông báo thành công
                     setTimeout(() => {
                       navigate("/invoice");
                     }, 1500);

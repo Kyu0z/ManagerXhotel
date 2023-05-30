@@ -102,24 +102,44 @@ body {
   border-radius: 0px 0px 40px 40px;
 }
 
-.scroll-color {
-  position: absolute;
-  left: 0%;
-  right: 43.32%;
-  top: 100%;
-  bottom: -10.34%;
-  background: #c18346;
-  transform: matrix(1, 0, 0, -1, 0, 0);
+.roomTypeItem {
+  width: 180px;
+  font-size: 25px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: #fff;
+  position: relative;
+  padding: 1rem 0;
 }
 
-.scroll {
+.roomTypeItem:after {
+  content: "";
   position: absolute;
-  left: 0%;
-  right: 43.32%;
-  top: 100%;
-  bottom: -10.34%;
-  background: #d9d9d9;
-  transform: matrix(1, 0, 0, -1, 0, 0);
+  width: 100%;
+  height: 0.175rem;
+  background: #c18346;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.roomTypeItem:focus:after {
+  transform: scale(1);
+}
+
+.banner_bt {
+  position: relative;
+  background-color: #f1e2d3;
+  width: 100%;
+  height: 20%;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  top: -20px;
 }
 
 /* Sign up */
