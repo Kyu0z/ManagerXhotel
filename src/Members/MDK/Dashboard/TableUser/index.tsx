@@ -7,7 +7,10 @@ import {
   collection,
   onSnapshot,
   query,
+  deleteDoc,
+  doc,
 } from "firebase/firestore";
+import { toast } from "react-toastify";
 import user from "@src/assets/user.png";
 
 const { Title } = Typography;
@@ -64,8 +67,12 @@ const TableUser = () => {
       key: "action",
       fixed: "right",
       width: 100,
-      render: () => (
-        <Button type="primary" danger>
+      render: (record) => (
+        <Button
+          type="primary"
+          danger
+          onClick={() => handleDelete(record.key.toString())}
+        >
           Delete
         </Button>
       ),
@@ -96,6 +103,19 @@ const TableUser = () => {
     // Clean up listener
     return () => unsubscribe();
   }, []);
+  console.log("users", data);
+
+  const handleDelete = async (documentId: string) => {
+    try {
+      await deleteDoc(doc(db, "users", documentId));
+      console.log("Document successfully deleted!");
+      // Xử lý khi tài liệu được xóa thành công
+      toast.success("Xóa thành công"); // Thông báo thành công
+    } catch (error) {
+      console.error("Lỗi khi xóa tài liệu:", error);
+      toast.error("Xóa thất bại"); // Thông báo lỗi
+    }
+  };
 
   return (
     <Space direction="vertical">
