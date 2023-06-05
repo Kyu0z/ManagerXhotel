@@ -44,7 +44,11 @@ const TableUser = () => {
       fixed: "left",
     },
     { title: "Phone", dataIndex: "phoneNumber", key: "1", width: 108 },
-    { title: "Room", dataIndex: "room", key: "2" },
+    {
+      title: "Room",
+      dataIndex: "room",
+      key: "2",
+    },
     {
       title: "Check In",
       key: "checkIn",
@@ -103,7 +107,22 @@ const TableUser = () => {
     // Clean up listener
     return () => unsubscribe();
   }, []);
-  console.log("users", data);
+
+  // useEffect(() => {
+  //   const usersRef: CollectionReference = collection(db, "rooms");
+  //   const queries = query(usersRef);
+  //   const unsubscribe = onSnapshot(queries, (snapshot) => {
+  //     snapshot.forEach((doc) => {
+  //       const user = doc.data();
+  //       console.log(user);
+  //     });
+  //   });
+
+  //   return () => {
+  //     // Unsubscribe khi component unmount
+  //     unsubscribe();
+  //   };
+  // }, []);
 
   const handleDelete = async (documentId: string) => {
     try {

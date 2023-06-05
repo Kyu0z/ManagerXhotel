@@ -1,7 +1,7 @@
 import { Col, Image, Layout, Row, Typography } from "antd";
-import gal1 from "@src/Members/MDK/LandingPage/image/gallery/gal1.png";
-import gal2 from "@src/Members/MDK/LandingPage/image/gallery/gal2.png";
-import gal3 from "@src/Members/MDK/LandingPage/image/gallery/gal3.png";
+import gal1 from "@src/Members/MDK/LandingPage/image/gallery/gal1.jpg";
+import gal2 from "@src/Members/MDK/LandingPage/image/gallery/gal2.jpg";
+import gal3 from "@src/Members/MDK/LandingPage/image/gallery/gal3.jpg";
 import banner2 from "@src/Members/MDK/LandingPage/image/banner/banner2.png";
 
 const { Title } = Typography;
@@ -30,13 +30,13 @@ const Gallery = () => {
         <Col className="flex-50 max-w-50 md:flex-50 sm:flex-100 sm:order-first">
           <div className="flex items-center justify-between w-full sm:!w-[280px]">
             <div className="w-[33,33%]">
-              <Image src={gal1} />
+              <Image className="!h-[400px] !w-[400px]" src={gal1} />
             </div>
             <div className="w-[33,33%] mx-6">
-              <Image src={gal2} />
+              <Image className="!h-[400px] !w-[400px]" src={gal2} />
             </div>
             <div className="w-[33,33%]">
-              <Image src={gal3} />
+              <Image className="!h-[400px] !w-[400px]" src={gal3} />
             </div>
           </div>
         </Col>

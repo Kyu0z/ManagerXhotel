@@ -1,5 +1,5 @@
 import { Image, Layout, Space, Typography } from "antd";
-import banner from "@src/Members/MDK/LandingPage/image/banner/banner.png";
+import banner from "@src/Members/MDK/LandingPage/image/banner/banner.jpg";
 import phone from "@src/Members/MDK/LandingPage/image/phone.svg";
 import arr from "@src/Members/MDK/LandingPage/image/arrow-right.svg";
 import { NavLink } from "react-router-dom";
