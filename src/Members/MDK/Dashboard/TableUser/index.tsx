@@ -48,6 +48,7 @@ const TableUser = () => {
       title: "Room",
       dataIndex: "room",
       key: "2",
+      render: () => <span>Lanai</span>,
     },
     {
       title: "Check In",
