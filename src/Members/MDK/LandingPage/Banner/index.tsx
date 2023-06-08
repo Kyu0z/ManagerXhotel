@@ -20,7 +20,9 @@ const Banner = () => {
               Services
             </li>
           </NavLink>
-          <li className="nav-item md:!text-[1rem] sm:!text-[.5rem]">Room</li>
+          <NavLink to={"/room"}>
+            <li className="nav-item md:!text-[1rem] sm:!text-[.5rem]">Room</li>
+          </NavLink>
           <NavLink to={"/dashboard"}>
             <li className="nav-item md:!text-[1rem] sm:!text-[.5rem]">
               Dashboard
