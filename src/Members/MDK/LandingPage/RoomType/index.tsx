@@ -115,7 +115,7 @@ const RoomType = () => {
                   level={5}
                   className="!m-0 !font-light text-[14px] relative top-[-5px] sm:!text-[1rem]"
                 >
-                  {room.description}
+                  lorem ipsum dolor sit amet, consectet
                 </Title>
               </div>
             </NavLink>
