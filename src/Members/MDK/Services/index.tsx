@@ -101,7 +101,7 @@ const Services = () => {
                 rules={[{ required: true, message: "Hãy nhập nội dung" }]}
               >
                 <Editor
-                  apiKey="bbgcjf3wub8tp920nmmvpenzept1801yb7d741hjpw3zog91"
+                  apiKey="fejtyx27oaixa4vay7t20h60zozkvtyg0nj2zladun3qqo8y"
                   value={editor}
                   onEditorChange={setEditor}
                   init={{
